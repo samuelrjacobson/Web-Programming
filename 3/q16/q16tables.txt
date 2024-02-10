@@ -1,0 +1,30 @@
++----+--------------------------------------------------------------------------------+------------+---------+---------+------------+---------+
+| id | question                                                                       | answer1    | answer2 | answer3 | answer4    | correct |
++----+--------------------------------------------------------------------------------+------------+---------+---------+------------+---------+
+|  1 | Which language is oldest?                                                      | C          | Fortran | SQL     | COBOL      |       2 |
+|  2 | Which language is this?: print("Hello.")                                       | Java       | Python  | Lisp    | C++        |       2 |
+|  3 | Which language does not need semi-colons between statements on separate lines? | PHP        | CSS     | C       | JavaScript |       4 |
+|  4 | Which language is not primarily a web language?                                | HTML       | CSS     | R       | PHP        |       3 |
+|  5 | Which language does WebGL use?                                                 | JavaScript | Java    | Python  | C++        |       1 |
++----+--------------------------------------------------------------------------------+------------+---------+---------+------------+---------+
+
++----------+-------+----------+-------+
+| name     | code  | status   | score |
++----------+-------+----------+-------+
+| Claude   | 16502 | Not done |     0 |
+| Marilyn  | 29964 | Not done |     0 |
+| Cynthia  | 35101 | Not done |     0 |
+| Franz    | 48642 | Not done |     0 |
+| Esther   | 56078 | Not done |     0 |
+| Louverne | 60003 | Not done |     0 |
+| Hagar    | 79252 | Not done |     0 |
+| Beatrice | 84218 | Not done |     0 |
+| Martha   | 99539 | Not done |     0 |
+| Clarence | 05673 | Not done |     0 |
++----------+-------+----------+-------+
+
++----------+
+| password |
++----------+
+| candy    |
++----------+

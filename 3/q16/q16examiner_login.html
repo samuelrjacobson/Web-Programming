@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<!-- This file creates an html page that accepts a password and sends it to
+    q16results.php for validation, to access exam results page. -->
+<html lang="en">
+    <head>
+        <title>Examiner Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Exam</h1>
+        
+        <!-- Examiner signs in with password, gets directed to q16results.php -->
+        <form method="get" action="q16results.php">
+            <label>Enter password:&nbsp;</label><input name ="password"></input>
+            <input type="submit">
+        </form>
+    </body>
+</html>

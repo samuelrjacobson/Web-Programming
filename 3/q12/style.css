@@ -1,0 +1,50 @@
+/* Defines styling for q1 */
+		* {
+			font-family: georgia;
+		}
+		li {
+			font-size: 15px;
+		}
+		body {
+			background-color: cornflowerBlue;
+		}
+		.bigger {	/* education content */
+			font-size: 20px;
+		}
+		section {
+			background-color: mediumTurquoise;
+			margin: 30px 60px;	/* 30px top/bottom, 60px right/left */
+			border-style: solid;
+			border-width: 10px;
+			padding: 3px;
+		}
+		/* each section gets different border color */
+		#education {
+			border-color: navy;
+		}
+		#computerSkills {
+			border-color: violet;
+		}
+		#courses {
+			border-color: darkSlateBlue;
+		}
+		#projects {
+			border-color: aqua;
+			padding-left: 30px;
+		}
+		#workExperience {
+			border-color: royalBlue;
+		}
+		#other {
+			border-color: darkBlue;
+		}
+		/* headings of each section */
+		h2 {
+			text-align: center;
+		}
+		#linkBox {
+			position: absolute;
+			background-color: yellow;
+			visibility: hidden;
+			padding: 10px;
+		}

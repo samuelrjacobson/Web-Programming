@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Your Order</title>
+    <style>
+        /* Basic styling for the body - sets font, line height, color, alignment, and background color */
+        body {
+            margin: auto;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page title -->
+    <h1>Menu</h1>
+    
+    <!-- Form for placing an order -->
+    <form action="http://localhost:8000/customer.php" method="post">
+        <!-- Section for food item selection -->
+        <div>
+            <label><input type="checkbox" name="noodles" value="1"> Noodles ($5)</label><br>
+            <label><input type="checkbox" name="rice" value="1"> Rice ($3)</label><br>
+            <label><input type="checkbox" name="hotpot" value="1"> Hotpot ($10)</label><br>
+        </div>
+        
+        <!-- Section for entering customer details -->
+        <h2>Your Details</h2>
+        <div>
+            Name: <input type="text" name="name"><br>
+            Card Number: <input type="text" name="card"><br>
+            Address: <input type="text" name="address"><br>
+        </div>
+
+        <!-- Submit button for the form -->
+        <input type="submit" value="Submit Order">
+    </form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>University Cost Evaluation</title>
+        <style>
+            /* Style for the entire page */
+            * {
+                text-align: center;
+                font-size: 30px;
+            }
+            body {
+                background-color: lime; /* Set background color */
+            }
+            div {
+                margin: 3%; /* Margin for each div element */
+            }
+            button {
+                background-color: black; /* Style for buttons */
+                color: white;
+                padding: 5px;
+            }
+            h1 {
+                font-size: 40px; /* Heading style */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Main heading of the page -->
+        <h1>University Cost Evaluation</h1>
+
+        <!-- Form for capturing user input, sends data to calculate.php -->
+        <form id="costForm" method="post" action="http://localhost:8000/calculate.php">
+            
+            <!-- Input field for number of credits -->
+            <div>
+                <label>Number of credits</label><br>
+                <input type="text" id="credits" name="credits">
+            </div>
+
+            <!-- Radio buttons for selecting undergraduate or graduate status -->
+            <div>
+                <input type="radio" id="undergrad" name="gradStatus" value="Undergraduate">Undergraduate
+                <input type="radio" id="grad" name="gradStatus" value="Graduate">Graduate
+            </div>
+
+            <!-- Radio buttons for selecting in-state or out-of-state status -->
+            <div>
+                <input type="radio" id="instate" name="stateStatus" value="Instate">Instate
+                <input type="radio" id="outstate" name="stateStatus" value="Out-of-state">Out-of-state
+            </div>
+
+            <!-- Checkboxes for selecting dorm, dining, and parking options -->
+            <div>
+                <input type="checkbox" id="dorm" name="dorm">Dorm
+                <input type="checkbox" id="dine" name="dine">Dining
+                <input type="checkbox" id="park" name="park">Parking
+            </div>
+
+            <!-- Hidden div for displaying tuition (if needed for future use) -->
+            <div id="tuition" style="display: none;"></div>
+
+            <!-- Submit and reset buttons for the form -->
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </body>
+</html>

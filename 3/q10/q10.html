@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!--15. 
+    This file creates a web page that gets user input for a compound interest calculation, and sends it to q10.php
+    for evaluation. The inputs to the calculation are the initial amount, interest rate, and number of years. .-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compute compound interest</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Compound Interest Calculator</h1>
+        <form method ="get" action="q10.php">
+
+            <!-- Text boxes for user to input variables used in compound interest calculation-->
+            <table>
+                <tr> 
+                    <td><label> Initial Amount: </label> <!--label-->
+                    <input name="p" id="p"></input></td> <!--textbox for Initial Amount-->
+                </tr>
+                <tr>
+                    <td>
+                        <label> Interest Rate: </label>
+                        <input name="r" id="r"></input> <!--textbox for interest rate-->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Number of Years: </label> 
+                        <input name="n" id="n"> <!--textbox for year-->
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- Submit and reset buttons -->
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

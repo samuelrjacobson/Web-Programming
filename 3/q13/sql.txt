@@ -1,0 +1,10 @@
+CREATE DATABASE db1;
+
+USE db1;
+
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message CHAR(450) NOT NULL,
+    date DATETIME NOT NULL
+);
+

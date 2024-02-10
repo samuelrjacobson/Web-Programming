@@ -1,0 +1,16 @@
+* {
+    background-color: pink;
+    color: black;
+    font: helvetica;
+}
+table {
+    border: 2px solid black;
+    padding: 5px;
+}
+button {
+    background-color: red;
+    font-size: 20px;
+}
+.white {
+    background-color: white;
+}

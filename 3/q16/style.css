@@ -1,0 +1,10 @@
+* {
+    font-family: georgia;
+}
+body {
+    background-color: yellow;
+    padding-left: 25%;
+}
+td {
+    padding: 10px;
+}

@@ -1,0 +1,13 @@
+* {
+    font-family: georgia;
+}
+body {
+    background-color: pink;
+    padding-left: 25%;
+}
+input {
+    margin-top: 20px;
+}
+td {
+    padding: 10px;
+}
