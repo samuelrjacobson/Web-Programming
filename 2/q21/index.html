@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Triggers moveEmuBox on mouse move and hideEmuBox when mouse exits the page area -->
+<html lang="en" onmousemove="moveEmuBox(event)" onmouseover="moveEmuBox(event)" onmouseout="hideEmuBox()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMU Offices</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #emuBox { /* id */
+            position: absolute;
+            display: none; /* The box is not displayed initially */
+            background-color: #f1f1f1; /* Background color of the box */
+            border: 1px solid #d3d3d3; /* Border of the box */
+            color: black; /* Text color */
+            text-align: center; /* Center-align text */
+            padding: 6px;
+            font-size: 11px; /* Font size of the text */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>EMU Offices</h1>
+    </header>
+
+    <table>
+        <tr>
+            <th>Office Name</th>
+            <th>Location</th>
+            <th>Phone Number</th>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.emich.edu/admissions/" target="_blank">Admission Office</a></td>
+            <td>PO Box 921, Ypsilanti, MI 48197</td>
+            <td>800.GO.TO.EMU</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.emich.edu/oiss/"  target="_blank">Office for International Students and Scholars</a></td>
+            <td>240 Student Center,Ypsilanti, Michigan 48197</td>
+            <td>734.487.3116</td>
+
+        </tr>
+        <tr>
+            <td><a href="https://www.emich.edu/swoops-food-pantry/index.php"  target="_blank">Swoop's Food Pantry</a></td>
+            <td>104 Pierce Hall, Ypsilanti, Michigan 48197</td>
+            <td>734.487.4173</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.emich.edu/campus-life/about-us/index.php"  target="_blank">Campus Life</a></td>
+            <td>340R Student Center</td>
+            <td>734-487-4047</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.emich.edu/recim/about-us/index.php"  target="_blank">Rec/IM</a></td>
+            <td>110 Olds/Robb, Ypsilanti, Michigan 48197</td>
+            <td>734.487.1338</td>
+        </tr>
+    </table>
+
+    <!-- Add the EMU box -->
+    <div id="emuBox">EMU</div>
+
+    <script>
+        function moveEmuBox(event) {
+            var emuBox = document.getElementById("emuBox");
+            // Position the EMU box below the mouse pointer, adjusting the values as needed
+            emuBox.style.left = (event.clientX) + 'px'; // The box is positionedto the right of the cursor
+            emuBox.style.top = (event.clientY) + 'px'; // The box is positioned below the cursor
+            emuBox.style.display = 'block'; // Show the box when the mouse moves
+        }
+
+        function hideEmuBox() {
+            var emuBox = document.getElementById("emuBox");
+            emuBox.style.display = 'none'; // Hide the box when the mouse is out
+        }
+    </script>
+
+
+    
+</body>
+</html>

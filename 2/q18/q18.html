@@ -1,0 +1,190 @@
+<!--18.
+    Repeat the id/password question with the following changes. When the mouse moves over an
+    input box, a dynamic message indicating the format of that input appears on the right. When the 
+    mouse moves out of a box, its dynamic message disappears. When a box becomes focused its 
+    background becomes white. There is no submit button to calculate the id and password. 
+    Whenever a change event occurs in a box, the inputs from all three boxes are read and checked 
+    for errors. If there is an error then the background of the corresponding box changes to red, and
+    the id and password are not displayed. If there are no errors then the id and password are 
+    displayed. When an error is corrected in a box its background becomes white. When the id and 
+    password are displayed, the backgrounds of all boxes are white and there are no messages-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id & Passwords Generator</title>
+
+    <style>
+        table{
+            font-size: larger;
+            margin: auto;
+        
+            height: auto;
+            width: auto;  
+        }
+        body{
+            margin: 30px;
+        }
+        h1, td{
+            text-align: center;
+            padding: 5px;
+        }
+        input {
+			background-color: lightgray;
+		}
+        #fnameMessage, #lnameMessage, #pnumMessage{
+            color: red;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Id & Password Generator</h1>
+
+    <!-- Text boxes for user to enter credentials -->
+    <table>
+        <tr>
+            <td>
+                <input onmouseover="showFormat(this)" onmouseout="removeFormat(this)" onfocus="white(this)" onchange="errorCheck(this)"
+                type="text" maxlength="10" placeholder="first name" id="fname"> <!--text input box for first name-->
+            </td>
+
+            <td id="fnameMessage">First name are strings of lower or upper case letters of length at least two.</td> <!--place for error message -->
+        </tr>
+
+        <tr>
+            <td>
+                <input onmouseover="showFormat(this)" onmouseout="removeFormat(this)" onfocus="white(this)" onchange="errorCheck(this)"
+                type="text" maxlength="10" placeholder="last name" id="lname"> <!--text input box for last name-->
+            </td>
+
+            <td id="lnameMessage">Last name are strings of lower or upper case letters of length at least two.</td> <!--place for error message-->
+        </tr>
+
+        <tr>
+            <td>  
+                <input onmouseover="showFormat(this)" onmouseout="removeFormat(this)" onfocus="white(this)" onchange="errorCheck(this)"
+                type="text" placeholder="phone number: xxx-xxx-xxxx" id="pnum"> <!--text input box for phone number-->
+            </td>
+
+            <td id="pnumMessage">The phone number format is xxx-xxx-xxxx</td> <!-- error message-->
+        </tr>
+
+        <tr>
+            <td id="ID"></td> <!--place to show generated id-->
+            </td>
+        </tr>
+
+        <tr><td id="PASSWORD"></td></tr> <!--place to show generated password-->
+    </table>
+
+    <script>
+        function getIdPasswords() {
+
+            // get input and put the value into variable fname, lname, and pnum
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var pnum = document.getElementById("pnum").value;
+
+            var regName = /^[a-zA-Z]+$/; // regular expression for names
+            var regNum = /^\d{3}-\d{3}-\d{4}$/; // regular expression for phone number 
+
+            // Set to true if input is good
+            var fnameGood = false
+            var lnameGood = false
+            var pnumGood = false
+
+            // if first name length >= 2 and match regular expression, then show no error message
+            if (fname.length >= 2 && fname.search(regName)==0) {
+                document.getElementById("fname").style.backgroundColor = "white"
+                var firstLOfFName = fname.slice(0,1); // first letter of first name 
+                var lenFname = fname.length; // length of first name 
+                var lastLOfFName = fname.slice(lenFname-1, lenFname); // last letter of first name 
+                fnameGood = true
+            } else { // else show error message
+                document.getElementById("fname").style.backgroundColor = "red"            
+            }
+
+            // if last name length >= 2 and match regular expression, then show no error message
+            if (lname.length >= 2 && lname.search(regName)==0) {
+                document.getElementById("lname").style.backgroundColor = "white"
+                var id = firstLOfFName + lname; // generate id
+                var fist3LOfLname = lname.slice(0,3); // first three letters of last name 
+                lnameGood = true
+            } else { // else show error message
+                document.getElementById("lname").style.backgroundColor = "red"
+            }
+
+            // if phone number matches format
+            if(pnum.search(regNum)==0) {
+                document.getElementById("pnum").style.backgroundColor = "white"
+                var lenPnum = pnum.length; // length of phone number 
+                var last4ofpnum = pnum.slice(lenPnum-4,lenPnum); // last 4 digits of phone number
+                pnumGood = true
+            } else {
+                document.getElementById("pnum").style.backgroundColor = "red";
+            }
+
+            // Create id and password
+            if(fnameGood && lnameGood && pnumGood)
+            {
+                var passWord = lastLOfFName + fist3LOfLname + last4ofpnum; // generate password
+                id = id.toUpperCase(); // turn id uppercase
+                passWord = passWord.toUpperCase(); // turn password uppercase
+
+                document.getElementById("ID").innerHTML = "The id is: " + id; // link generated id to html
+                document.getElementById("PASSWORD").innerHTML = "The password is: " + passWord; // link generated id to html
+            }
+        }
+
+        // Show message when input box is hovered over
+        function showFormat(element)
+		{
+			if (document.getElementById("fname")==element)
+			{
+				document.getElementById("fnameMessage").style.visibility = "visible"
+			}
+			if (document.getElementById("lname")==element)
+			{
+				document.getElementById("lnameMessage").style.visibility = "visible"
+			}
+			if (document.getElementById("pnum")==element)
+			{
+				document.getElementById("pnumMessage").style.visibility = "visible"
+			}
+		}
+		
+        // Remove message when input box is not hovered over
+		function removeFormat(element)
+		{
+			if (document.getElementById("fname")==element)
+			{
+				document.getElementById("fnameMessage").style.visibility = "hidden"
+			}
+			if (document.getElementById("lname")==element)
+			{
+				document.getElementById("lnameMessage").style.visibility = "hidden"
+			}
+			if (document.getElementById("pnum")==element)
+			{
+				document.getElementById("pnumMessage").style.visibility = "hidden"
+			}
+		}
+
+        // Change background of inputs to white
+        function white(element) {
+			element.style.backgroundColor = "white"
+		}
+
+        // Get ID and password every time input values change
+        document.getElementById("fname").onchange = getIdPasswords;
+        document.getElementById("lname").onchange = getIdPasswords; 
+        document.getElementById("pnum").onchange = getIdPasswords;
+    </script>
+
+    
+</body>
+</html>

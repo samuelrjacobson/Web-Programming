@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--23
+	Create a web page to play a simple game. The game is played in a large square area. There 
+	are two players. One player is a small green square. The other player is a small red square. Both 
+	players have the same size. The green player is randomly jumping from place to place within the
+	playing area. The green player can jump from any point to any point. The movement of the green 
+	player is controlled by an animation loop. The red player is trying to catch the green player. The 
+	red player can only jump in left, right, up, or down directions by a fixed distance. There are five 
+	buttons located horizontally below the playing area. The user clicks on the start button to start 
+	the game. The user clicks on left, right, up, or down button to move the red player in left, right, 
+	up, or down direction. When a direction button is clicked the red player jumps in that direction 
+	by the fixed distance. The game continues even if the red player catches the green player. You
+	need to choose the following: size of players, how often the green player changes its position, 
+	jumping distance of the red player. You need to carefully choose these values so that the game 
+	does not become too difficult or too easy. Use appropriate css style for the game.
+
+-->
+<html>
+	<head>  
+		<title>Catch the Square Game</title>
+
+		<style>
+		body {
+			background-color: black;
+			color: yellow;
+			text-align: center;
+		}
+		h1 {
+			height: 50px;
+		}
+        #arena {
+            width: 550px;
+            height: 550px;
+			background-color: white;
+			margin-left: 32%;
+			position: absolute;
+		}
+        #green {
+            width: 45px;
+            height: 45px;
+			background-color: lime;
+			position: absolute;
+        }
+        #red {
+            width: 45px;
+            height: 45px;
+			background-color: red;
+			position: absolute;
+        }
+		#buttons {
+			position: absolute;
+			height: 100px;
+			width: 550px;
+			margin-left: 32%;
+			top: 650px;
+		}
+		button {
+			width: 100px;
+			height: 50px;
+			background-color: yellow;
+		}
+		#start {
+			background-color: lime;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- Heading -->
+		<h1>Catch the Green Square</h1>
+
+		<!-- Playing area that squares will be restricted to -->
+        <div id="arena">
+            <div id="green"></div>
+            <div id="red"></div>
+        </div>
+
+		<!-- Movement buttons for red square (user-controlled) -->
+		<div id="buttons">
+		<button id="start" onclick="start()">START</button>
+		<button id="left" onclick="left()">LEFT</button>
+		<button onclick="right()">RIGHT</button>
+		<button onclick="up()">UP</button>
+		<button onclick="down()">DOWN</button>
+		</div>
+		
+        <script>
+		// Random movement of green square
+        function greenSquare()
+        {
+            let x = Math.floor(Math.random() * 499)
+			let y = Math.floor(Math.random() * 499)
+
+
+			const g = document.getElementById("green")
+			g.style.left = x + "px"
+			g.style.top = y + "px"
+
+        }
+
+		// Red square movements
+		// Jump left movement of red square
+		function left()
+		{
+			const r = document.getElementById("red")
+			let pos = r.style.left.search("px")
+			pos = Number(r.style.left.substring(0, pos))
+
+			if(pos > 50) pos -= 100
+			r.style.left = pos + "px"
+		}
+		// Jump right movement of red square
+		function right()
+		{
+			const r = document.getElementById("red")
+			let pos = r.style.left.search("px")
+			pos = Number(r.style.left.substring(0, pos))
+
+			if(pos < 400) pos += 100
+			r.style.left = pos + "px"
+		}
+		// Jump up movement of red square
+		function up()
+		{
+			const r = document.getElementById("red")
+			let pos = r.style.top.search("px")
+			pos = Number(r.style.top.substring(0, pos))
+
+			if(pos > 50) pos -= 100
+			r.style.top = pos + "px"
+		}
+		// Jump down movement of red square
+		function down()
+		{
+			const r = document.getElementById("red")
+			let pos = r.style.top.search("px")
+			pos = Number(r.style.top.substring(0, pos))
+
+			if(pos < 400) pos += 100
+			r.style.top = pos + "px"
+		}
+
+		// When user clicks Start, begin moving green square and position red square
+		function start()
+		{
+			greenSquare()
+			setInterval(greenSquare, 1950);
+
+			const r = document.getElementById("red")
+			r.style.left = 50 + "px"
+			r.style.top = 50 + "px"
+		}
+		</script>
+	</body>
+</html>

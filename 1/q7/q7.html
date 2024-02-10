@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!-- Creates an HTML webpage for my resume, with sections for education, computer skills, courses, projects, work experience, and other. Uses a different style/format than q2.html. -->
+<html lang="en">
+	<head>
+		<title>Resume</title>
+		
+		<meta name="keywords" content="resume, computer science">
+		<meta name="author" content="Sam Jacobson">
+				
+		<style>
+			header {
+				background-color: blue;
+				text-align: center;
+				padding: 10px;
+			}
+			div {
+				margin-left: 25%;
+				margin-right: 25%;
+				border-style: solid;
+				border-color: yellow;
+				border-width: 2px;
+			}
+			#left {
+				width: 33%;
+				text-align: right;
+				background-color: aqua;
+				border-style: solid;
+				border-color: yellow;
+				border-width: 5px;
+				padding-left: 10%;
+				padding-right: 5%;
+			}
+			#right {
+				width: 67%;
+				text-align: left;
+				padding-left: 10px;
+			}
+			#yellow {
+				color: yellow;
+			}
+			* {
+				font-family: georgia;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+	<!--header-->
+		<header>
+			<div>
+				<h1>Samuel <span id="yellow">Jacobson</span></h1>
+			</div>
+		</header>
+		
+		<main>
+			<!-- education -->
+			<table>
+				<tr>
+					<td id="left">
+						<section id="contact">
+							<h2>Contact</h2>
+							<p>sjacob25@emich.edu<br>734.787.8794<br>1371 Warner Creek Dr. Saline, MI</p>
+						</section>
+
+						<section id="education">
+							<h2>Education</h2>
+							<p>Saline High School—Graduated in June 2021 with 3.9875 GPA</p>
+							<p>Eastern Michigan University—Attending full-time since September 2021, cumulative GPA 3.97. Pursuing Bachelor of Science in Computer Science - Applied, expected April 2025.</p>
+						</section>
+					
+						<!-- computer skills -->
+						<section id="computerSkills">
+							<h2>Computer skills</h2>
+							<ul>
+								<li>Programming languages: Java, C, C++, C#, Python, Lisp, HTML/CSS, Javascript, Swift, Processing, R, machine language</li>
+								<li>AutoCAD and Inventor</li>
+								<li>Adobe and GIMP</li>
+								<li>PGP and SSH</li>
+							</ul>
+						</section>
+					</td>
+					
+					<td id="right">
+						<!-- courses -->
+						<section id="courses">
+							<h2>Courses</h2>
+							<ul>
+								<li>Intro to Programming</li>
+								<li>Programming Data Structures</li>
+								<li>Statistical Methods</li>
+								<li>Computer Organization I</li>
+								<li>Internet-based Computing</li>
+								<li>Algorithms & Data Structures</li>
+								<li>Computational Discrete Structures</li>
+								<li>Programming Languages</li>
+								<li>Software Engineering Solutions</li>
+								<li>Web Programming</li>
+								<li>Computer Graphics</li>
+							</ul>
+						</section>
+						
+						<!-- projects -->
+						<section id="projects">
+							<h2>Projects</h2>
+							<ul>
+								<li>Matrix properties computer: This Java program reads an adjacency matrix from a file as input and determines whether the relation is reflexive, antireflexive, symmetric, and antisymmetric, and outputs the transitive closure of the relation to a txt file.</li>
+								<li>Dijkstra's airports: A program that takes airport codes and a matrix representation of the airport flight path distances to each other and uses Dijkstra's algorithm to compute the shortest path and distance from each airport to each airport. It outputs a matrix representation of these distances and allows the user to enter specific "start" and "end" airports to find the shortest distance and path between them.</li>
+								<li>Student record database projects: These programs all store a database of student information, including last name, first name, and ID#. Each program allows the user to add, find, and delete student records and display them in ascending and descending order by each attribute (last name, first name, and ID#).<br>The programs differ by which data structures they use: Program 1 uses OrderedArrays. Program 2 uses Double-Ended Doubly Linked Lists. Program 3 uses Binary Search Trees. One version of Program 3 uses recursive traversals and does not use threading; the other uses loops and implements threading.</li>
+							</ul>
+						</section>
+						
+						<!-- work experience -->
+						<section id="workExperience">
+							<h2>Work experience</h2>
+							<ul>
+								<li>Library shelver</li>
+								<li>Cashier</li>
+								<li>Lawn mower</li>
+							</ul>
+						</section>
+						
+						<!-- other -->
+						<section id="other">
+							<h2>Other</h2>
+							<ul>
+								<li>Saline Fiddlers Philharmonic</li>
+								<li>Dungeons & Dreadnoughts club at Eastern Michigan University</li>
+							</ul>
+						</section>
+					</td>
+				</tr>
+			</table>
+			
+		</main>
+	</body>
+</html>

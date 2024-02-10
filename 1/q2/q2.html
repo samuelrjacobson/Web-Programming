@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!-- Creates an HTML webpage for my resume, with sections for education, computer skills, courses, projects, work experience, and other. -->
+<html lang="en">
+	<head>
+		<title>Resume</title>
+		
+		<meta name="keywords" content="resume, computer science">
+		<meta name="author" content="Sam Jacobson">
+				
+		<style>
+		/* Defines styling for q1 */
+		* {
+			font-family: georgia;
+		}
+		li {
+			font-size: 15px;
+		}
+		body {
+			background-color: cornflowerBlue;
+		}
+		.bigger {	/* education content */
+			font-size: 20px;
+		}
+		section {
+			background-color: mediumTurquoise;
+			margin: 30px 60px;	/* 30px top/bottom, 60px right/left */
+			border-style: solid;
+			border-width: 10px;
+			padding: 3px;
+		}
+		/* each section gets different border color */
+		#education {
+			border-color: navy;
+		}
+		#computerSkills {
+			border-color: violet;
+		}
+		#courses {
+			border-color: darkSlateBlue;
+		}
+		#projects {
+			border-color: aqua;
+			padding-left: 30px;
+		}
+		#workExperience {
+			border-color: royalBlue;
+		}
+		#other {
+			border-color: darkBlue;
+		}
+		/* headings of each section */
+		h2 {
+			text-align: center;
+		}
+		</style>
+	</head>
+	
+	<body>
+	
+	<!--header-->
+		<header style="text-align:center">
+			<h1>Samuel Jacobson</h1>
+			<p>sjacob25@emich.edu | 734.787.8794 | 1371 Warner Creek Dr. Saline, MI</p>
+		</header>
+		
+		<main>
+			<!-- education -->
+			<section id="education">
+				<h2>Education</h2>
+				<p><span class="bigger">Saline High School</span>—Graduated in June 2021 with 3.9875 GPA</p>
+				<p><span class="bigger">Eastern Michigan University</span>—Attending full-time since September 2021, cumulative GPA 3.97. Pursuing Bachelor in Computer Science - Applied, expected April 2025.</p>
+			</section>
+
+			<!-- computer skills -->
+			<section id="computerSkills">
+				<h2>Computer skills</h2>
+				<ul>
+					<li>Programming languages: Java, C, C++, C#, Python, Lisp, HTML/CSS, Javascript, Swift, Processing, R, machine language</li>
+					<li>AutoCAD and Inventor</li>
+					<li>Adobe and GIMP</li>
+					<li>PGP and SSH</li>
+				</ul>
+			</section>
+			
+			<!-- courses -->
+			<section id="courses">
+				<h2>Courses</h2>
+				<ul>
+					<li>Intro to Programming</li>
+					<li>Programming Data Structures</li>
+					<li>Statistical Methods</li>
+					<li>Computer Organization I</li>
+					<li>Internet-based Computing</li>
+					<li>Algorithms & Data Structures</li>
+					<li>Computational Discrete Structures</li>
+					<li>Programming Languages</li>
+					<li>Software Engineering Solutions</li>
+					<li>Web Programming</li>
+					<li>Computer Graphics</li>
+				</ul>
+			</section>
+			
+			<!-- projects -->
+			<section id="projects">
+				<h2>Projects</h2>
+				<ul>
+					<li><a href="https://github.com/samuelrjacobson/314Project1--Properties-of-Relations">Matrix properties computer</a></li>
+					<li><a href="https://github.com/samuelrjacobson/314Project2--Dijkstra">Shortest path between airports (Dijkstra's algorithm)</a></li>
+					<li><a href="https://github.com/samuelrjacobson/311-Database-Programs">Student record database projects</a></li>
+				</ul>
+			</section>
+			
+			<!-- work experience -->
+			<section id="workExperience">
+				<h2>Work experience</h2>
+				<ul>
+					<li>Library shelver</li>
+					<li>Cashier</li>
+					<li>Lawn mower</li>
+				</ul>
+			</section>
+			
+			<!-- other -->
+			<section id="other">
+				<h2>Other</h2>
+				<ul>
+					<li>Saline Fiddlers Philharmonic</li>
+					<li>Dungeons & Dreadnoughts club at Eastern Michigan University</li>
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!--15. 
+    Create a web page that calculates the compound interest. The inputs to the calculation are the initial amount, 
+    interest rate, and number of years. The output is the final amount. If p amount isinvested for n years with 
+    interest rate r then the final amount will be p(1 + r/100)n . There are three text boxes for the inputs. These 
+    text boxes have appropriate labels on the left. The text boxes and the labels are properly aligned. There is a 
+    button below the boxes/labels to calculate the final amount. The final amount is displayed below the button. 
+    The page has an appropriate title. Everything is centered on the page. Use appropriate css style.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute compound interest</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <table>
+        <tr> 
+            <td><label> Initial Amount: </label> <!--label-->
+            <input type="text" id="p"></input></td> <!--textbox for Initial Amount-->
+        </tr>
+
+        <tr>
+            <td>
+                <label> Interest Rate: </label>
+                <input type="text" id="r"></input> <!--textbox for interest rate-->
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label> Number of Years: </label> 
+                <input type="text" id="n"> <!--textbox for year-->
+
+            </td>
+ 
+        </tr>
+
+        <tr>
+            <td>
+                <button id="calculate"> Calculate Final Amount</button> <!--button-->
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p id="final"></p> <!--final result-->
+            </td>
+        </tr>
+
+
+    </table>
+
+    <div>
+       
+
+    </div>
+
+    <p id="final"></p>
+
+    <script>
+        function getInterest() {
+            var p = document.getElementById("p").value; // get input for Initial Amount, save it a variable p
+            p = Number(p); // cast p from string to number 
+
+            var r = document.getElementById("r").value; // get input for interest rate, save it a variable r
+            r = Number(r); // cast r from string to number 
+
+            var n = document.getElementById("n").value; // get input for number of years, save it a variable n
+            n = Number(n); // cast n from string to number 
+
+            var final = ((1 + r/100) ** n) * p; // calculate final amount, save it to a variable final 
+
+            document.getElementById("final").innerHTML = "The final amount is "+ final; // link final to html 
+            
+        }
+
+        document.getElementById("calculate").onclick = getInterest; // when click button, call function getInterest()
+    </script>
+
+    
+
+</body>
+</html>

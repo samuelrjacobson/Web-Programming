@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--16
+	Create a web page that calculates the cost of attending a university. The inputs to the 
+	calculation are the number of credits, undergraduate/graduate status, in state/out of state status, 
+	and selection of dorm/dining/parking options. The number of credits is entered in a text box. The 
+	undergraduate/graduate status is chosen from radio buttons. The in state/out of state status is also 
+	chosen from radio buttons. The dorm/dining/parking options are selected from check boxes.
+	There are appropriate labels. There is a button below to calculate the total cost. The total cost is
+	displayed below the button. The page has an appropriate title. Everything is centered on the page. 
+	Use appropriate css style. The in state tuition is $200 for undergraduates and $300 for graduates. 
+	The out of state tuition is twice the in state tuition. The dorm, dining, and parking have fixed 
+	costs of $1000, $500, and $200 respectively.
+-->
+<html>
+	<head>
+		<title>University Cost Evaluation</title>
+
+		<style>
+			* {
+				text-align: center;
+				font-size: 30px;
+			}
+			body {
+				background-color: lime;
+			}
+			div {
+				margin: 3%;
+			}
+			#calculate {
+				background-color: black;
+				color: white;
+				padding: 5px;
+			}
+			h1 {
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Heading -->
+		<h1>University Cost Evaluaton</h1>
+
+		<div>
+		<!-- User enters number of credits -->
+		<label>Number of credits</label>
+		<br>
+		<input></input>
+		</div>
+
+		<!-- User chooses graduate status -->		
+		<div>
+			<input type="radio" id="undergrad" name="gradStatus">Undergraduate</input>
+			<input type="radio" id="grad" name="gradStatus">Graduate</input>
+		</div>
+
+		<!-- User chooses instate or out-of-state -->
+		<div>
+			<input type="radio" id="instate" name="stateStatus">Instate</input>
+			<input type="radio" id="outstate" name="stateStatus">Out-of-state</input>
+		</div>
+
+		<!-- User selects paying for dorm, dining, parking -->
+		<div>
+			<input type="checkbox" id="dorm">Dorm</input>
+			<input type="checkbox" id="dine">Dining</input>
+			<input type="checkbox" id="park">Parking</input>
+		</div>
+
+		<!-- Button to execute calculation-->
+		<div>
+			<button id="calculate">Calculate cost</button>
+		</div>
+
+		<!-- Cost will appear here when button above is pressed -->
+		<div id="cost"></div>
+		
+		<script>
+		function calculateCost()
+		{
+			let cost = 0
+
+			// if user selects "instate"
+			if (document.getElementById("instate").checked)
+			{
+				if (document.getElementById("undergrad").checked)
+				{
+					cost = 200
+				}
+				else if (document.getElementById("grad").checked)
+				{
+					cost = 300
+				}
+			}
+			// Double-price for out-of-state
+			if (document.getElementById("outstate").checked)
+			{
+				if (document.getElementById("undergrad").checked)
+				{
+					cost = 400
+				}
+				else if (document.getElementById("grad").checked)
+				{
+					cost = 600
+				}
+			}
+
+			// Add fixed price of dorm, dining, parking
+			if (document.getElementById("dorm").checked)
+			{
+				cost += 1000
+			}
+			if (document.getElementById("dine").checked)
+			{
+				cost += 500
+			}
+			if (document.getElementById("park").checked)
+			{
+				cost += 200
+			}
+
+			// Display resulting cost below button
+			document.getElementById("cost").innerHTML = "Total cost: $" + cost
+		}
+
+		// When user clicks Calculate button, execute function
+		document.getElementById("calculate").addEventListener("click", calculateCost);
+		</script>
+	</body>
+</html>

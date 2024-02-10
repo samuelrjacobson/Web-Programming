@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!-- Creates an HTML webpage for a person's personalized web portal. 
+	 Requires q22.js -->
+<html lang="en">
+	<head>
+		<title>Joe's Web Portal</title>
+	
+		<script type="text/javascript" src="q22.js"></script>
+
+		<style>
+		div {
+			background-color: mediumSlateBlue;
+			padding: 5px;
+			width: 20%;
+		}
+		#shopping {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		#entertainment {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			text-align: right;
+		}
+		#socialMedia {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+		}
+		#education {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			text-align: right;
+		}
+		img {
+			position: relative;
+			top: 200px;
+			left: 37.5%;
+			width: 25%;
+			height: 25%;
+		}
+		#quoteBox {
+			position: fixed;
+			top: 40%;
+			left: 5%;
+			width: 20%;
+			font-family: 'Brush Script MT', cursive;
+			font-size: 125%;
+		}
+		h1 {
+			text-align: center;
+		}
+		body {
+			background-color: blue;
+			color: white;
+		}
+		a {
+			color: orange;
+			font-size: 30px;
+		}
+		h1 {
+			font-size: 35px;
+		}
+		h2 {
+			font-size: 30px;
+		}
+		#timeBox {
+			background-color: black;
+			color: white;
+			padding: 5px;
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			z-index: 100;
+		}
+		</style>
+
+	</head>
+	<body onload="init()">
+	
+		<h1>Joe's Web Portal</h1>
+
+		<span id="timeBox"></span>
+		
+		<div id="shopping">
+			<h2>Shopping</h2>
+			<ul>
+				<li><a href="https://www.amazon.com/">Amazon</a></li>
+				<li><a href="https://www.ebay.com/">Ebay</a></li>
+				<li><a href="https://www.craigslist.org/">Craigslist</a></li>
+				<li><a href="https://www.angi.com/">Angie's List</a></li>
+			</ul>
+		</div>
+		
+		<div id="entertainment">
+			<h2>Entertainment</h2>
+			<ul>
+				<li><a href="https://www.netflix.com/">Netflix</a></li>
+				<li><a href="https://www.espn.com/">ESPN</a></li>
+				<li><a href="https://www.hulu.com/">Hulu</a></li>
+				<li><a href="https://www.sporcle.com/">Sporcle</a></li>
+			</ul>
+		</div>
+		
+		<p id="quoteBox"></p>
+		
+		<img src="https://img.freepik.com/free-photo/positive-guy-with-african-hairstyle-dark-skin-wearing-elegant-white-shirt_273609-14032.jpg?w=1060&t=st=1697988239~exp=1697988839~hmac=1c02acc7f9d391d152ce5cda424902f7c94769da0a04eb802c001be5a007968c">
+		
+		<div id="socialMedia">
+			<h2>Social media</h2>
+			<ul>
+				<li><a href="https://www.facebook.com/">Facebook</a></li>
+				<li><a href="https://www.twitter.com">X</a></li>
+				<li><a href="https://www.youtube.com">YouTube</a></li>
+				<li><a href="https://myspace.com/">Myspace</a></li>
+			</ul>
+		</div>
+		
+		<div id="education">
+			<h2>Education</h2>
+			<ul>
+				<li><a href="https://www.emich.edu/">EMU</a></li>
+				<li><a href="https://www.yale.edu/">Yale</li>
+				<li><a href="https://www.cam.ac.uk/">Cambridge</li>
+				<li><a href="https://www.khanacademy.org/">Khan Academy</a></li>
+			</ul>
+		</div>
+	
+	</body>
+</html>
